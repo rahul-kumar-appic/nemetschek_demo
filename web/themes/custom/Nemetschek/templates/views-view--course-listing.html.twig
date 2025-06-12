@@ -1,0 +1,80 @@
+{{ attach_library('Nemetschek/courses-professional') }}
+{%
+  set classes = [
+    'view',
+    'view-' ~ id|clean_class,
+    'view-id-' ~ id,
+    'view-display-id-' ~ display_id,
+    dom_id ? 'js-view-dom-id-' ~ dom_id,
+    'courses-listing-page'
+  ]
+%}
+
+<div
+	class="courses-listing-page">
+	<!-- Professional Hero Section -->
+	<div class="courses-hero">
+		<div class="hero-background">
+			<div class="hero-pattern"></div>
+		</div>
+		<div class="hero-content">
+			<div class="hero-text">
+				<h1>Learn Graphisoft</h1>
+				<p>Master Archicad with our comprehensive course library and take your BIM skills to the next level</p>
+			</div>
+			<div
+				class="hero-visual"> <img src="">
+			</div>
+		</div>
+	</div>
+
+	<div class="courses-main-content ">
+		<div
+			class="container row d-flex">
+			<!-- Filters Section -->
+			{% if exposed %}
+				<div class="courses-filters col-3">
+					<div class="courses-header">
+						<div class="section-title">
+							<h2>Discover. Learn. Grow.</h2>
+							<p>Browse Courses</p>
+						</div>
+					</div>
+					<div class="filters-header">
+						<h3>Filters</h3>
+						<button class="filters-toggle">
+							<span class="toggle-text">Show Filters</span>
+							<span class="toggle-icon">▼</span>
+						</button>
+					</div>
+					<div class="filters-content">
+						{{ exposed }}
+					</div>
+				</div>
+			{% endif %}
+
+			<!-- Courses Header -->
+
+
+			<!-- Courses Grid -->
+			{% if rows %}
+				<div class="courses-professional-grid col-9">
+
+					{{ rows }}
+				</div>
+			{% else %}
+				<div class="no-courses">
+					<h3>No courses found</h3>
+					<p>Try adjusting your filters or search terms.</p>
+				</div>
+			{% endif %}
+
+			<!-- Pagination -->
+			{% if pager %}
+				<div class="courses-pagination">
+					{{ pager }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

@@ -1,0 +1,22 @@
+name: Nemetschek
+type: theme
+base theme: claro
+description: 'Custom theme for Nemetschek website'
+core_version_requirement: ^11
+libraries:
+  - nemetschek/global-styling
+  - nemetschek/tailwind
+
+regions:
+  header: Header
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  hero: Hero
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  sidebar_first: 'First sidebar'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_bottom: 'Footer bottom'

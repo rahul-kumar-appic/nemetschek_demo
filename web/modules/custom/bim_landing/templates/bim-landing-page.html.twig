@@ -1,0 +1,79 @@
+{#
+/**
+ * @file
+ * Template for BIM Landing page.
+ *
+ * Available variables:
+ * - hero_title: Hero section title
+ * - hero_subtitle: Hero section subtitle
+ * - cta_text: Call to action text
+ * - cta_link: Call to action link
+ * - intro_text: Array of intro paragraphs
+ * - products: Array of products
+ */
+#}
+
+
+</style>
+<div
+	class="bim-landing-page">
+	<!-- Hero Section -->
+	<section class="hero-section">
+		<div class="hero-content">
+			<div class="hero-text">
+				<h1 class="hero-heading">{{ hero_heading|raw }}</h1>
+				<h1 class="title">{{ hero_title|raw }}</h1>
+				<p class="subtitle">{{ hero_subtitle }}</p>
+				<a href="{{ cta_link }}" class="cta-button">
+					{{ cta_text }}
+					→
+				</a>
+			</div>
+			<div class="hero-image">
+				<div class="building-image">
+					<img src="/drupal/web/modules/custom/bim_landing/assets/solutions_banner.png">
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Content Section -->
+	<section class="content-section">
+		<div class="intro-text">
+			{% for paragraph in intro_text %}
+				<p>{{ paragraph }}</p>
+			{% endfor %}
+		</div>
+	</section>
+
+	<!-- Tools Section -->
+	<section class="tools-section">
+		<div class="tools-content">
+			<div class="tools-header">
+				<p class="tools-label">{{ 'UTILIZE OUR TOOLS TO'|t }}</p>
+				<h2>{{ 'Bring design ideas to life'|t }}</h2>
+				<p class="subtitle">{{ 'Choose a bundle to view the included software'|t }}</p>
+			</div>
+
+			<div class="product-tabs">
+				<button class="tab active" data-series="all">{{ 'All Products'|t }}</button>
+				<button class="tab" data-series="series1">{{ 'Series 1'|t }}</button>
+				<button class="tab" data-series="series2">{{ 'Series 2'|t }}</button>
+				<button class="tab" data-series="series3">{{ 'Series 3'|t }}</button>
+			</div>
+
+			<div class="products-grid" id="products-grid">
+				{% for key, product in products %}
+					{% include '@bim_landing/bim-product-card.html.twig' with {'product': product} %}
+				{% endfor %}
+			</div>
+			<a href="#" class="cta-button" style="margin-top:30px">
+				Buy Stack Now →
+			</a>
+		</div>
+	</section>
+</div>
+{% include '@bim_landing/templates/ArchitectureCaseStudies.html.twig'  with {'architecture': architecture}%}
+
+
+{{ drupal_block('knowledge_center_block') }}

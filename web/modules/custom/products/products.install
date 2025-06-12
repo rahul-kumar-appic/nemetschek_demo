@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Products module.
+ */
+
+use Drupal\Core\File\FileSystemInterface;
+
+/**
+ * Implements hook_install().
+ */
+function products_install() {
+  // Create assets directory if it doesn't exist
+  $file_system = \Drupal::service('file_system');
+  $module_path = \Drupal::service('extension.list.module')->getPath('products');
+  
+  $assets_dir = $module_path . '/assets';
+  $images_dir = $assets_dir . '/images';
+  
+  if (!file_exists($assets_dir)) {
+    $file_system->mkdir($assets_dir, NULL, TRUE);
+  }
+  
+  if (!file_exists($images_dir)) {
+    $file_system->mkdir($images_dir, NULL, TRUE);
+  }
+
+  \Drupal::messenger()->addMessage(t('Products module has been installed. You can configure it at <a href="@url">Admin > Configuration > Content authoring > Products</a>.', [
+    '@url' => '/admin/config/content/products',
+  ]));
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function products_uninstall() {
+  // Clean up configuration
+  \Drupal::configFactory()->getEditable('products.settings')->delete();
+  
+  \Drupal::messenger()->addMessage(t('Products module has been uninstalled and all configuration has been removed.'));
+}

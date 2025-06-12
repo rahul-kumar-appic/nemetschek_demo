@@ -1,0 +1,44 @@
+<div class="bg-white flex flex-col items-center w-full">
+  <div class="bg-white w-full max-w-[1440px] relative">
+    {% if page.header %}
+      {{ page.header }}
+    {% endif %}
+
+    {% if page.hero %}
+      {{ page.hero }}
+    {% endif %}
+
+    <main role="main">
+      <a id="main-content" tabindex="-1"></a>
+      {{ page.content }}
+    </main>
+
+    {% if page.footer_first or page.footer_second or page.footer_third %}
+      <footer class="w-full bg-white py-10 px-20">
+        <div class="grid grid-cols-4 gap-8">
+          {% if page.footer_first %}
+            <div class="flex flex-col space-y-4">
+              {{ page.footer_first }}
+            </div>
+          {% endif %}
+
+          {% if page.footer_second %}
+            <div class="flex flex-col space-y-4">
+              {{ page.footer_second }}
+            </div>
+          {% endif %}
+
+          {% if page.footer_third %}
+            <div class="flex flex-col space-y-4">
+              {{ page.footer_third }}
+            </div>
+          {% endif %}
+        </div>
+
+        {% if page.footer_bottom %}
+          {{ page.footer_bottom }}
+        {% endif %}
+      </footer>
+    {% endif %}
+  </div>
+</div>

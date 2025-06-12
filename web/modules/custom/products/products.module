@@ -1,0 +1,41 @@
+<?php
+
+/**
+ * @file
+ * Products module file.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function products_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.products':
+      return '<p>' . t('Products module provides product showcase pages with banners and content sections.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function products_theme() {
+  return [
+    'products_bluebeam' => [
+      'variables' => [
+        'banner' => NULL,
+        'content' => NULL,
+      ],
+      'template' => 'products-bluebeam',
+    ],
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for products_bluebeam.
+ */
+function products_preprocess_products_bluebeam(&$variables) {
+  // Add any preprocessing logic here
+  $variables['#attached']['library'][] = 'products/products-styles';
+}

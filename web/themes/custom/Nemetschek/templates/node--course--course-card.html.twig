@@ -1,0 +1,57 @@
+<article class="course-card">
+	<div class="course-image-wrapper">
+		{{ content.field_course_image }}
+		<div class="course-play-overlay">
+			<div class="play-button">
+				<svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+					<path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+				</svg>
+			</div>
+		</div>
+		<div class="course-badges">
+			{% if content.field_course_category %}
+				<span class="course-category-badge">
+					{{ content.field_course_category }}
+				</span>
+			{% endif %}
+			{% if content.field_course_duration %}
+				<span class="course-duration-badge">
+					{{ content.field_course_duration }}
+				</span>
+			{% endif %}
+		</div>
+	</div>
+
+	<div class="course-content">
+		<div class="course-header">
+			<h3 class="course-title">{{ label }}</h3>
+		</div>
+
+		{# {% if content.field_course_description %}
+		      <div class="course-description">
+		        {{ content.field_course_description }}
+		      </div>
+		    {% endif %} #}
+
+		<div class="course-footer">
+			{# <div class="course-meta">
+				{% if content.field_course_level %}
+					<span class="course-level">
+						{{ content.field_course_level }}
+					</span>
+				{% endif %}
+				{% if content.field_course_price %}
+					<span class="course-price">
+						{{ content.field_course_price }}
+					</span>
+				{% endif %}
+			</div> #}
+
+			{% if content.field_course_link %}
+				<div class="course-action">
+					{{ content.field_course_link }}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</article>

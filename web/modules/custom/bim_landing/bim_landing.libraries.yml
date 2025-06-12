@@ -1,0 +1,16 @@
+bim-landing-page:
+  version: 1.x
+  css:
+    theme:
+      css/bim_landing.css: {}
+      css/ArchitectureCaseStudies.css: {}
+      css/knowledge-center.css: {}
+  js:
+    js/bim_landing.js: {}
+    js/ArchitectureCaseStudies.js: {}
+    js/knowledge-center.js: {}
+
+  dependencies:
+    - core/drupal
+    - core/jquery
+    - core/drupalSettings

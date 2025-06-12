@@ -1,0 +1,15 @@
+products.bluebeam:
+  path: '/products/bluebeam'
+  defaults:
+    _controller: '\Drupal\products\Controller\ProductsController::bluebeam'
+    _title: 'Bluebeam'
+  requirements:
+    _permission: 'access content'
+
+products.admin_config:
+  path: '/admin/config/content/products'
+  defaults:
+    _form: '\Drupal\products\Form\ProductsConfigForm'
+    _title: 'Products Configuration'
+  requirements:
+    _permission: 'administer site configuration'

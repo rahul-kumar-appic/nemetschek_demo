@@ -1,0 +1,81 @@
+<?php
+
+/**
+ * @file
+ * BIM Landing page module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function bim_landing_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.bim_landing':
+      return '<p>' . t('Custom BIM Architecture landing page with advanced features.') . '</p>';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function bim_landing_theme($existing, $type, $theme, $path) {
+  return [
+    'bim_landing_page' => [
+      'variables' => [
+        'hero_title' => NULL,
+        'hero_heading' => NULL,
+        'hero_subtitle' => NULL,
+        'cta_text' => NULL,
+        'cta_link' => NULL,
+        'intro_text' => [],
+        'products' => [],
+        'architecture' => [],
+      ],
+      'template' => 'bim-landing-page',
+    ],
+    'bim_product_card' => [
+      'variables' => [
+        'product' => [],
+      ],
+      'template' => 'bim-product-card',
+    ],
+        'ArchitectureCaseStudies' => [
+      'variables' => [
+        'architecture' => [],
+      ],
+      'template' => 'ArchitectureCaseStudies',
+    ],
+    'knowledge_center_block' => [
+      'variables' => [
+        'tutorials' => [],
+      ],
+      'template' => 'knowledge-center-block',
+    ],
+    
+
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function bim_landing_preprocess_bim_landing_page(&$variables) {
+  // Add any preprocessing logic here
+  $variables['#attached']['library'][] = 'bim_landing/bim-landing-page';
+}
+
+function bim_landing_preprocess_knowledge_center_block(&$variables) {
+  // Add any preprocessing logic here
+  foreach ($variables['tutorials'] as &$tutorial) {
+    // Ensure URLs are properly formatted
+    if (!empty($tutorial['thumbnail']) && !str_starts_with($tutorial['thumbnail'], 'http')) {
+      $tutorial['thumbnail'] = base_path() . ltrim($tutorial['thumbnail'], '/');
+    }
+    
+    // Add default values if not set
+    $tutorial['type'] = $tutorial['type'] ?? 'Tutorial';
+    $tutorial['duration'] = $tutorial['duration'] ?? '';
+  }
+}

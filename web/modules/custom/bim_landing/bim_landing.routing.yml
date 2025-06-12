@@ -1,0 +1,18 @@
+bim_landing.page:
+  path: '/solutions'
+  defaults:
+    _controller: '\Drupal\bim_landing\Controller\BimLandingController::build'
+    _title: 'BIM Architecture'
+  requirements:
+    _permission: 'access content'
+
+
+    # AJAX route for product tabs
+bim_landing.ajax_products:
+  path: '/solutions/ajax/products/{series}'
+  defaults:
+    _controller: '\Drupal\bim_landing\Controller\BimLandingController::ajaxProducts'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: FALSE

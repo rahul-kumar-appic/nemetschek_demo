@@ -1,0 +1,62 @@
+{#
+/**
+ * @file
+ * Template for Knowledge Center block.
+ *
+ * Available variables:
+ * - tutorials: Array of tutorial data.
+ */
+#}
+
+<section class="knowledge-center">
+  <div class="knowledge-center__header">
+    <p class="knowledge-center__label">KNOWLEDGE CENTER</p>
+    <h2 class="knowledge-center__title">Your Guide to Smarter Learning</h2>
+  </div>
+  
+  <div class="knowledge-center__grid">
+    {% for tutorial in tutorials %}
+      <div class="tutorial-card">
+        <div class="tutorial-card__media">
+          <img src="{{ tutorial.thumbnail }}" alt="{{ tutorial.title }}" class="tutorial-card__thumbnail">
+          <button class="tutorial-card__play-btn" onclick="playVideo('{{ tutorial.video_url }}')">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M8 5v14l11-7z" fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="tutorial-card__content">
+          <div class="tutorial-card__header">
+            <span class="tutorial-card__company">{{ tutorial.company }}</span>
+            <div class="tutorial-card__meta">
+              <span class="tutorial-card__type">{{ tutorial.type }}</span>
+              <span class="tutorial-card__duration">{{ tutorial.duration }}</span>
+            </div>
+          </div>
+          
+          <h3 class="tutorial-card__title">{{ tutorial.title }}</h3>
+          
+          <a href="{{ tutorial.tutorial_url }}" class="tutorial-card__link">
+            View Tutorial
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  
+  <div class="knowledge-center__footer">
+    <a href="/tutorials" class="btn btn--primary">View all</a>
+  </div>
+</section>
+
+<script>
+function playVideo(videoUrl) {
+  // Add your video player logic here
+  console.log('Playing video:', videoUrl);
+  // You can integrate with a modal video player or redirect to video page
+}
+</script>

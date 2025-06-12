@@ -1,0 +1,11 @@
+name: Products
+type: module
+description: 'Product showcase pages with banners and content sections'
+core_version_requirement: ^11
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:block
+  - drupal:field
+  - drupal:text
+  - drupal:image

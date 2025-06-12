@@ -1,0 +1,221 @@
+/* Header Container Styling */
+.region-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  min-height: 80px;
+}
+
+/* Logo Block Styling */
+#block-nemetschek-logo {
+  flex-shrink: 0;
+  margin-right: 2rem;
+}
+
+#block-nemetschek-logo .field__label {
+  display: none; /* Hide the "logo" label */
+}
+
+#block-nemetschek-logo img {
+  max-height: 40px;
+  width: auto;
+}
+
+/* Main Navigation Styling */
+#block-nemetschek-mainnavigation {
+  flex-grow: 1;
+  margin: 0 2rem;
+}
+
+#block-nemetschek-mainnavigation h2 {
+  display: none; /* Hide visually-hidden title for cleaner look */
+}
+
+#block-nemetschek-mainnavigation .menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+#block-nemetschek-mainnavigation .menu-item {
+  margin: 0;
+}
+
+#block-nemetschek-mainnavigation .menu-item a {
+  text-decoration: none;
+  color: #434343;;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+nav ul li{
+list-style: none !important;
+}
+
+#block-nemetschek-mainnavigation .menu-item a:hover {
+  color: #434343;; /* Adjust to match your brand color */
+}
+
+/* Add subtle underline effect on hover */
+#block-nemetschek-mainnavigation .menu-item a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #434343;
+  transition: width 0.3s ease;
+}
+
+#block-nemetschek-mainnavigation .menu-item a:hover::after {
+  width: 100%;
+}
+ #block-nemetschek-mainnavigation .menu-item a.is-active::after{
+    content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color:  #434343;;
+  width: 100%; 
+ }
+
+/* Header Icons Block Styling */
+#block-nemetschek-headericon {
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
+
+#block-nemetschek-headericon .field__item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Individual Icon Styling */
+.header-cart,
+.header-phone,
+.header-search {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-cart:hover,
+.header-phone:hover,
+.header-search:hover {
+  background-color: #f5f5f5;
+}
+
+.header-cart svg,
+.header-phone svg,
+.header-search svg {
+  width: 20px;
+  height: 20px;
+  stroke: #333333;
+  transition: stroke 0.3s ease;
+}
+
+.header-cart:hover svg,
+.header-phone:hover svg,
+.header-search:hover svg {
+  stroke: #007acc;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .region-header {
+    padding: 1rem;
+  }
+  
+  #block-nemetschek-mainnavigation .menu {
+    gap: 1.5rem;
+  }
+  
+  #block-nemetschek-mainnavigation .menu-item a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .region-header {
+    flex-wrap: wrap;
+    padding: 1rem;
+  }
+  
+  #block-nemetschek-logo {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  #block-nemetschek-mainnavigation {
+    order: 3;
+    width: 100%;
+    margin: 1rem 0 0 0;
+  }
+  
+  #block-nemetschek-mainnavigation .menu {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  #block-nemetschek-headericon {
+    margin-left: auto;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #block-nemetschek-mainnavigation .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  #block-nemetschek-headericon .field__item {
+    gap: 1rem;
+  }
+}
+
+/* Clean up Drupal's default styling */
+.contextual-region .contextual {
+  display: none;
+}
+
+.layout--onecol {
+  margin: 0;
+}
+
+.field {
+  margin: 0;
+}
+
+.field__label.visually-hidden {
+  display: none;
+}
+
+/* Ensure proper alignment and remove extra spacing */
+.block {
+  margin: 0;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

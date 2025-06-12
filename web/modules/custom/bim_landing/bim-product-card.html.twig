@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Template for product card component.
+ *
+ * Available variables:
+ * - product: Product data array
+ */
+#}
+
+<div class="product-card">
+  <div class="product-logo">
+   <img src="{{ product.logo }}"> </img>
+  </div>
+  {# <h3>{{ product.name }}</h3> #}
+  <p class="tagline">{{ product.tagline }}</p>
+  <p>{{ product.description }}</p>
+  {% if product.link %}
+    <a href="{{ product.link }}" class="product-link">{{ 'Learn More'|t }} →</a>
+  {% endif %}
+</div>
+

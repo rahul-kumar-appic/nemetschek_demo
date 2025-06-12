@@ -1,0 +1,10 @@
+name: 'BIM Landing Page'
+type: module
+description: 'Custom BIM Architecture landing page with advanced features'
+package: Custom
+core_version_requirement: ^9 || ^10 || ^11
+version: '1.0'
+dependencies:
+  - drupal:node
+  - drupal:system
+configure: bim_landing.admin_settings 

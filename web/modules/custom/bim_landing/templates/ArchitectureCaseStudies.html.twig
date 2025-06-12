@@ -1,0 +1,81 @@
+{# <div class="architecture-case-studies">
+  <div class="case-studies-header">
+    <h3 class="case-studies-title">Architecture Case Studies</h3>
+    <h2 class="case-studies-subtitle">Driving Results with Precision and Purpose</h2>
+  </div>
+  
+  <div class="case-studies-carousel-wrapper">
+    <div class="case-studies-carousel" id="case-studies-carousel">
+      <div class="carousel-track">
+      {{ dump(architecture) }}
+        {% for study in architecture %}
+          <div class="carousel-slide">
+            <div class="case-study-card">
+              <div class="case-study-image">
+                <img src="{{ study.image_url }}" alt="{{ study.title }}" loading="lazy">
+                <div class="case-study-overlay">
+                  <h4 class="case-study-title">{{ study.title }}</h4>
+                  <p class="case-study-description">{{ study.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <button class="carousel-nav carousel-nav-prev" aria-label="Previous slide">
+      <span class="nav-arrow">‹</span>
+    </button>
+    <button class="carousel-nav carousel-nav-next" aria-label="Next slide">
+      <span class="nav-arrow">›</span>
+    </button>
+  </div>
+  
+  <div class="case-studies-footer">
+    <a href="/case-studies" class="explore-button">
+      Explore Case Studies
+      <span class="button-arrow">→</span>
+    </a>
+  </div>
+</div> #}
+{# //asad  #}
+<div class="architecture-case-studies" id="architecture-case-studies">
+  <div class="case-studies-header">
+    <h2 class="case-studies-title">{{ 'ARCHITECTURE CASE STUDIES' }}</h2>
+    <h1 class="case-studies-subtitle">{{ 'Driving Results with Precision and Purpose' }}</h1>
+  </div>
+  
+  <div class="case-studies-carousel-wrapper">
+    <div class="case-studies-carousel" id="case-studies-carousel">
+      <div class="carousel-track" id="carousel-track">
+        {% for study in architecture %}
+          <div class="carousel-slide">
+            <div class="case-study-card">
+              <div class="case-study-image" style="background-image: url('{{study.image_url}}');">
+                <div class="case-study-overlay">
+                  <h4 class="case-study-title">{{ study.title }}</h4>
+                  <p class="case-study-description">{{ study.description }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    
+    <button class="carousel-nav carousel-nav-prev" id="prev-btn" aria-label="{{ 'Previous slide'|t }}">
+      <span class="nav-arrow">‹</span>
+    </button>
+    <button class="carousel-nav carousel-nav-next" id="next-btn" aria-label="{{ 'Next slide'|t }}">
+      <span class="nav-arrow">›</span>
+    </button>
+  </div>
+  
+  <div class="cta-section">
+    <a href="#" class="cta-button">
+      {{ 'Explore Case Studies' }}
+      <span>→</span>
+    </a>
+  </div>
+</div>
