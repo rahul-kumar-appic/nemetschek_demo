@@ -55,6 +55,70 @@
 	</section>
 
 
+	<section class="company-relies">
+		<div class="container-company">
+		<div class="content text-center">Companies that rely on Bluebeam </div>
+
+
+			<div class="company-card d-flex justify-content-between">
+				<div class="company-logo">
+					<img src="{{'/drupal/web/modules/custom/products/assets/ramboll.png'}}"></img>
+				</div>
+					<div class="company-logo">
+					<img src="{{'/drupal/web/modules/custom/products/assets/wsp.png'}}"></img>
+				</div>
+					<div class="company-logo">
+					<img src="{{'/drupal/web/modules/custom/products/assets/cowi.png'}}"></img>
+				</div>
+					<div class="company-logo">
+					<img src="{{'/drupal/web/modules/custom/products/assets/afry.png'}}"></img>
+				</div>
+					<div class="company-logo">
+					<img src="{{'/drupal/web/modules/custom/products/assets/laing.png'}}"></img>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# pricing product view  #}
+	<div class="pricing-container">
+	  {{ drupal_view('product_view', 'page_1') }} 
+	</div>
+
+{# pricing table  #}
+<div class="pricing-container">
+  <div class="header">
+    <h3>Get Bluebeam<h3>
+    <p>Purchase Bluebeam individually or explore bundled stacks.</p>
+  </div>
+
+  <div class="container">
+  <div class="row">
+ 
+    {% for product in products %}
+      <div class="col-4">
+	  <div class="pricing-card" >
+        <div class="plan-name">{{ product.name }}</div>
+        <div class="plan-description">{{ product.features }}</div>
+        <div class="price">${{ product.price }}</div>
+        <div class="price-period">Per user. One-time annually.</div>
+        <a class="cta-button" href='https://store.bluebeam.com/ccrz__HomePage?cclcl=en_I' target="_blank">
+          Buy Now →
+        </a>
+        
+        <div class="features-section">
+          <div class="features-title">Key features:</div>
+          <ul class="features-list">
+              <li>{{ feature }}</li>
+          </ul>
+        </div>
+		</div>
+      </div>
+    {% endfor %}
+	</div>
+  </div>
+</div>
+
 	{# Learn Section #}
 	<section class="learn-section">
 		<div class="container">
@@ -81,30 +145,6 @@
 	</section>
 
 
-	<section class="company-relies">
-		<div class="container-company">
-		<div class="content text-center">Companies that rely on Bluebeam </div>
-
-
-			<div class="company-card d-flex justify-content-between">
-				<div class="company-logo">
-					<img src="{{'/drupal/web/modules/custom/products/assets/ramboll.png'}}"></img>
-				</div>
-					<div class="company-logo">
-					<img src="{{'/drupal/web/modules/custom/products/assets/wsp.png'}}"></img>
-				</div>
-					<div class="company-logo">
-					<img src="{{'/drupal/web/modules/custom/products/assets/cowi.png'}}"></img>
-				</div>
-					<div class="company-logo">
-					<img src="{{'/drupal/web/modules/custom/products/assets/afry.png'}}"></img>
-				</div>
-					<div class="company-logo">
-					<img src="{{'/drupal/web/modules/custom/products/assets/laing.png'}}"></img>
-				</div>
-			</div>
-		</div>
-	</section>
 {# {% include '@bim_landing/templates/ArchitectureCaseStudies.html.twig'  with {'architecture': architecture}%}FAQ Section<section class="faq-section"> #}
 <div class="container">
 	<h2 class="faq-title">Frequently Asked Questions</h2>
@@ -184,3 +224,4 @@
 		</div>
 	</div>
 </div></section></div>
+

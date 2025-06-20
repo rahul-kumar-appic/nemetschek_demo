@@ -1,0 +1,187 @@
+{#
+/**
+ * STEP 7: Create template file
+ * File: modules/custom/home/templates/home-banner-slider.html.twig
+ */
+#}
+<div class="">
+        <div class="tab-slider-container">
+
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <div class="container">
+                <div class="swiper tabSwiper">
+                    <div class="swiper-wrapper slide-animation-bar">
+                        <div id="tab1" role="tab" aria-controls="panel1" aria-selected="false" tabindex="-1" 
+                             class="swiper-slide slide-bar" data-index="0">
+                            
+                            <div class="line-clamp max-3 progress-bar-title">
+                                Leader in BIM-enabled Collaboration
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-bar-slide"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="tab2" role="tab" aria-controls="panel2" aria-selected="false" tabindex="-1" 
+                             class="swiper-slide slide-bar" data-index="1">
+                           
+                            <div class="line-clamp max-3 progress-bar-title">
+                                Powerful Solutions for All Structures
+                            </div>
+                             <div class="progress-bar">
+                                <div class="progress-bar-slide"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="tab3" role="tab" aria-controls="panel3" aria-selected="true" tabindex="0" 
+                             class="swiper-slide slide-bar active" data-index="2">
+                            
+                            <div class="line-clamp max-3 progress-bar-title">
+                                Key Sustainable Design Drivers
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-bar-slide"></div>
+                            </div>
+                        </div>
+                        
+                        <div id="tab4" role="tab" aria-controls="panel4" aria-selected="false" tabindex="-1" 
+                             class="swiper-slide slide-bar" data-index="3">
+                            
+                            <div class="line-clamp max-3 progress-bar-title">
+                                Global Community of 7 Million Users
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-bar-slide"></div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="swiper-button-next">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="23.5" transform="rotate(180 24 24)" fill="white" fill-opacity="0.35" stroke="white"/>
+                    <path d="M15.275 24.8511L15.2758 24.852L20.1744 29.727C20.5414 30.0922 21.135 30.0908 21.5003 29.7238C21.8655 29.3568 21.8641 28.7633 21.4972 28.398L18.2082 25.125L32.0625 25.125C32.5803 25.125 33 24.7053 33 24.1875C33 23.6697 32.5803 23.25 32.0625 23.25L18.2083 23.25L21.4971 19.977C21.8641 19.6118 21.8655 19.0182 21.5002 18.6512C21.135 18.2841 20.5413 18.2828 20.1744 18.648L15.2758 23.523L15.2749 23.5239C14.9077 23.8904 14.9089 24.4859 15.275 24.8511Z" fill="white"/>
+                </svg>
+            </div>
+            <div class="swiper-button-prev">
+                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="23.5" fill="white" fill-opacity="0.35" stroke="white"/>
+                    <path d="M32.725 23.1489L32.7242 23.148L27.8256 18.273C27.4586 17.9078 26.865 17.9092 26.4997 18.2762C26.1345 18.6432 26.1359 19.2367 26.5028 19.602L29.7918 22.875H15.9375C15.4197 22.875 15 23.2947 15 23.8125C15 24.3303 15.4197 24.75 15.9375 24.75H29.7917L26.5029 28.023C26.1359 28.3882 26.1345 28.9818 26.4998 29.3488C26.865 29.7159 27.4587 29.7172 27.8256 29.352L32.7242 24.477L32.7251 24.4761C33.0923 24.1096 33.0911 23.5141 32.725 23.1489Z" fill="white"/>
+                </svg>
+            </div> -->
+
+            <!-- Content Panels -->
+            <div class="content-panels">
+                <div class="swiper contentSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide banner-item content-slide" id="panel1" style="background-image: url('/nemetschek/web/modules/custom/home/assets/home_banner.png');">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="banner-content">
+                                            <h4>Empowering India</h4>
+                                            <h1>BEST BIM Solutions</h1>
+                                            <h2>A more cost effective and productive alternative</h2>
+                                            <a href="javascript:Void(0)" class="btn btn-custom">
+                                                Start your Nemetschek journey
+                                                <svg width="18" height="12" viewBox="0 0 18 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide banner-item content-slide" id="panel2" style="background-image: url('/nemetschek/web/modules/custom/home/assets/home_banner.png');">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="banner-content">
+                                            <h4>Empowering India</h4>
+                                            <h1>BEST BIM Solutions</h1>
+                                            <h2>A more cost effective and productive alternative</h2>
+                                            <a href="javascript:Void(0)" class="btn btn-custom">
+                                                Start your Nemetschek journey
+                                                <svg width="18" height="12" viewBox="0 0 18 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide banner-item content-slide" id="panel3" style="background-image: url('/nemetschek/web/modules/custom/home/assets/home_banner.png');">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="banner-content">
+                                            <h4>Empowering India</h4>
+                                            <h1>BEST BIM Solutions</h1>
+                                            <h2>A more cost effective and productive alternative</h2>
+                                            <a href="javascript:Void(0)" class="btn btn-custom">
+                                                Start your Nemetschek journey
+                                                <svg width="18" height="12" viewBox="0 0 18 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide banner-item content-slide" id="panel4" style="background-image: url('/nemetschek/web/modules/custom/home/assets/home_banner.png');">
+                           <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="banner-content">
+                                            <h4>Empowering India</h4>
+                                            <h1>BEST BIM Solutions</h1>
+                                            <h2>A more cost effective and productive alternative</h2>
+                                            <a href="javascript:Void(0)" class="btn btn-custom">
+                                                Start your Nemetschek journey
+                                                <svg width="18" height="12" viewBox="0 0 18 12" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z"
+                                                        fill="white" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <!-- Partners Marquee Section -->
+  <section class="partners-section">
+      <div class="marquee-wrapper">
+        {{ drupal_view('partner_logos_marquee', 'block_1') }} 
+      </div>
+  </section>
+

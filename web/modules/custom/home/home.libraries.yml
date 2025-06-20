@@ -1,0 +1,13 @@
+home-page:
+  css:
+    theme:
+      'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css': { type: external }
+      css/home.css: {}
+  js:
+    'https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js': { type: external }
+    js/home.js: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/once

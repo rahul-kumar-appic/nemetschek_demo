@@ -544,3 +544,247 @@
     padding: 1rem 0;
   }
 }
+
+
+
+/* list pricing */
+
+.pricing-container {
+  background-color: #D3E4F680;
+    padding: 80px;
+  
+}
+
+.pricing-container .header {
+  text-align: center;
+
+}
+
+.pricing-container .header h3 {
+    font-size: 36px; 
+    font-weight: 400;
+    margin-bottom: 10px; 
+    line-height: 100%;
+}
+
+.pricing-container .header p {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.pricing-tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #e9ecef;
+}
+
+.pricing-tab {
+    padding: 15px 30px;
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #6c757d;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.pricing-tab.active {
+    color: #2c3e50;
+    border-bottom-color: #007bff;
+}
+
+
+
+.pricing-card {
+    background: white;
+    padding: 40px 30px;
+    position: relative;
+    overflow: hidden;
+    gap: 40px;
+}
+
+/* .pricing-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+} */
+
+.pricing-card.featured {
+    border: 2px solid #007bff;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    content: 'Best Value';
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: #007bff;
+    color: white;
+    padding: 5px 40px;
+    font-size: 0.8rem;
+    transform: rotate(45deg);
+    font-weight: bold;
+    z-index: 1;
+}
+
+.plan-name {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    line-height: 100%;
+}
+
+.plan-description {
+    margin-bottom: 30px;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.price {
+    font-size: 48px;
+    font-weight: 400;
+    /* color: #2c3e50; */
+    margin-bottom: 5px;
+}
+
+.price-period {
+    color: #6c757d;
+    margin-bottom: 30px;
+    font-size: 0.9rem;
+}
+
+.buy-btn {
+    background: #2c3e50;
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    display: block;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.buy-btn:hover {
+    background: #34495e;
+    transform: translateX(5px);
+    color: white;
+    text-decoration: none;
+}
+
+.featured .buy-btn {
+    background: #007bff;
+}
+
+.featured .buy-btn:hover {
+    background: #0056b3;
+}
+
+.features-section {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.features-title {
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.features-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.features-list li {
+    padding: 8px 0;
+    color: #495057;
+    position: relative;
+    padding-left: 25px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.features-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #28a745;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Loading state */
+.pricing-card.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.pricing-card.loading .buy-btn {
+    background: #6c757d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pricing-card {
+        padding: 30px 20px;
+    }
+    
+    .pricing-card.featured {
+        transform: none;
+    }
+    
+    .pricing-container .header h1 {
+        font-size: 2rem;
+    }
+    
+    .pricing-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pricing-tab {
+        padding: 10px 20px;
+    }
+    
+    .price {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-container {
+        padding: 20px 10px;
+    }
+    
+    .pricing-card {
+        padding: 25px 15px;
+    }
+    
+    .pricing-container .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .price {
+        font-size: 2rem;
+    }
+    
+    .buy-btn {
+        padding: 12px 30px;
+        font-size: 0.9rem;
+    }
+}

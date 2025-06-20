@@ -1,0 +1,15 @@
+<?php
+
+
+function home_theme() {
+  return [
+    'home_page' => [
+      'variables' => [
+        'slides' => NULL,
+         'hero_section' => NULL,
+      ],
+      'template' => 'home-page',
+    ],
+    // Your existing theme hooks continue here...
+  ];
+}

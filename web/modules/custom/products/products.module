@@ -26,8 +26,20 @@ function products_theme() {
       'variables' => [
         'banner' => NULL,
         'content' => NULL,
+         'products' => NULL,
       ],
       'template' => 'products-bluebeam',
+    ],
+  ];
+}
+
+function your_module_theme($existing, $type, $theme, $path) {
+  return [
+    'product_pricing_table' => [
+      'variables' => [
+        'products' => NULL,
+      ],
+      'template' => 'product-pricing-table',
     ],
   ];
 }

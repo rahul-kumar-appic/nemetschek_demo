@@ -1,6 +1,10 @@
 <?php
 
 namespace Drupal\products\Controller;
+use Drupal\views\Views;
+use Drupal\commerce_product\Entity\Product;
+use Drupal\commerce_store\Entity\Store;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Drupal\Core\Controller\ControllerBase;
 
@@ -13,7 +17,11 @@ class ProductsController extends ControllerBase {
    * Displays the Bluebeam product page.
    */
   public function bluebeam() {
-    return [
+
+     $products = $this->loadProducts();
+
+     
+    $data =  [
       '#theme' => 'products_bluebeam',
       '#banner' => [
         'title' => 'Bluebeam',
@@ -30,12 +38,46 @@ class ProductsController extends ControllerBase {
         'video_thumbnail' => '/drupal/web/modules/custom/products/assets/WhatISBlueBeam.png',
 
       ],
+        
+    '#products' => $products,
       '#attached' => [
         'library' => [
           'products/products-styles',
         ],
       ],
     ];
+
+    return $data;
   }
+
+private function loadProducts() {
+  $product_storage = \Drupal::entityTypeManager()->getStorage('commerce_product');
+  $product_ids = $product_storage->getQuery()->accessCheck(TRUE) 
+    ->condition('status', 1)
+    ->execute();
+$products = $product_storage->loadMultiple($product_ids);
+
+$formatted_products = [];
+foreach ($products as $product) {
+  
+  // Get price from variation
+  $title = $product->getTitle();
+  $plan_type = $product->get('field_plan_type')->value ?? 'N/A';
+  $features = $product->get('field_features')->value ?? 'N/A';
+  $price = $product->get('field_price')->value ?? 'N/A';
+  $description = $product->get('field_description')->value ?? 'N/A';
+  $features = $product->get('field_features')->value ?? 'N/A';
+  
+  $formatted_products[] = [
+    'name' => $title,
+    'plan_type' => $plan_type,
+    'features' => $features,
+    'price' => $price,
+    'description' => $description,
+  ];
+}
+
+  return $formatted_products;
+}
 
 }

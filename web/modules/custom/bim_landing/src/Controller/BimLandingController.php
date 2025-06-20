@@ -25,9 +25,9 @@ class BimLandingController extends ControllerBase {
     // Prepare render array
     $build = [
       '#theme' => 'bim_landing_page',
-      '#hero_heading' => $config->get('hero_heading') ?: 'INNOVATIVE DESIGN WITH ',
-      '#hero_title' => $config->get('hero_title') ?: 'BIM-Architecture',
-      '#hero_subtitle' => $config->get('hero_subtitle') ?: 'Elevate your concept design process',
+      '#hero_heading' => 'INNOVATIVE DESIGN WITH ',
+      '#hero_title' =>'BIM-Architecture',
+      '#hero_subtitle' => 'Elevate your concept design process',
       '#cta_text' => $config->get('cta_text') ?: 'Get a quote',
       '#cta_link' => $config->get('cta_link') ?: '/contact',
       '#intro_text' => $this->getIntroText(),

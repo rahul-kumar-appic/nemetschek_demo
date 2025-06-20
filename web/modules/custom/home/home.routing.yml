@@ -1,0 +1,16 @@
+home.page:
+  path: '/home'
+  defaults:
+    _controller: '\Drupal\home\Controller\HomeController::homeController'
+    _title: 'Nemetschek Home'
+  requirements:
+    _permission: 'access content'
+
+
+home.banner_config:
+  path: '/admin/config/content/home-banner'
+  defaults:
+    _form: '\Drupal\home\form\HomeBannerConfigForm'
+    _title: 'Home Banner Configuration'
+  requirements:
+    _permission: 'administer site configuration'
