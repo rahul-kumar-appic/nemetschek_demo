@@ -1,0 +1,300 @@
+<div
+	class="products-page bluebeam-page">
+
+	{# Banner Section #}
+	<section class="hero-section section">
+		<div class="container">
+			<div class="hero-content row">
+				<div class="hero-text col-12 col-md-6">
+					<p class="title2 text-white">{{  content.field_product_small_title}}</p>
+					<h1 class="title text-white">{{ content.field_product_name }}</h1>
+					<p class="subtext text-white">{{ content.field_product_description }}</p>
+					<a href="javascript:Void(0)" class="btn btn-custom mx-0">
+						{{ content.field_hero_cta_text }}
+						<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z" fill="white"/>
+						</svg>
+					</a>
+				</div>
+				<div class="building-image col-12 col-md-6">
+					{{ content.field_hero_image }}
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	{# Intro Section #}
+	<section class="product-content section white">
+		<div class="container">
+			<div class="row content-grid-gutter align-items-center">
+				<div class="content-text col-12 col-md-6">
+					<p class="subtext">{{ content.field_intro_text }}</p>
+				</div>
+				<div class="content-video col-12 col-md-6">
+					<div class="video-container">
+						<div class="video-thumbnail">
+							{{content.field_product_video_thubmnail}}
+							<div class="play-button">
+								<svg width="24" height="24" viewbox="0 0 24 24" fill="none">
+									<path d="M8 5v14l11-7z" fill="currentColor"/>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# key features  #}
+	{# Key Features Section #}
+	<section class="features-section section" style="background:#D3E4F680">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 mb-40">
+
+					<h1 class="title text-center">Key Features</h1>
+				</div>
+
+				<div class="col-12  project-slider">
+					<div class="swiper mySwiper2">
+						<div class="swiper-wrapper">
+
+							{% if content.field_key_features %}
+								{% for key, item in content.field_key_features  %}
+									{% if key|first != '#' %}
+										<div class="swiper-slide">
+											<div class="image-card" style="background-image: url('{{ file_url(item['#paragraph'].field_feature_image.entity.fileuri) }}');">
+												<div class="image-content">
+													<h3>{{ item['#paragraph'].field_feature_title.value }}</h3>
+													<p>{{ item['#paragraph'].field_feature_description.value }}</p>
+												</div>
+											</div>
+										</div>
+									{% endif %}
+								{% endfor %}
+							{% endif %}
+						</div>
+
+					</div>
+					<div class="swiper-button-prev">
+
+						<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M0.274969 6.85111L0.275812 6.852L5.17444 11.727C5.54142 12.0922 6.135 12.0908 6.5003 11.7238C6.86555 11.3568 6.86414 10.7633 6.49716 10.398L3.20822 7.125L17.0625 7.125C17.5803 7.125 18 6.70528 18 6.1875C18 5.66972 17.5803 5.25 17.0625 5.25L3.20826 5.25001L6.49711 1.977C6.86409 1.61175 6.8655 1.01818 6.50025 0.651192C6.13495 0.284114 5.54133 0.282848 5.17439 0.648005L0.275764 5.52301L0.274921 5.5239C-0.0922514 5.89036 -0.0910783 6.48586 0.274969 6.85111Z" fill="#878787"/>
+						</svg>
+
+					</div>
+					<div class="swiper-button-next">
+
+						<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M17.725 5.14889L17.7242 5.148L12.8256 0.272997C12.4586 -0.0922062 11.865 -0.0908471 11.4997 0.276184C11.1345 0.643168 11.1359 1.23675 11.5028 1.602L14.7918 4.875L0.9375 4.875C0.419719 4.875 0 5.29472 0 5.8125C0 6.33028 0.419719 6.75 0.9375 6.75L14.7917 6.75L11.5029 10.023C11.1359 10.3882 11.1345 10.9818 11.4998 11.3488C11.865 11.7159 12.4587 11.7172 12.8256 11.352L17.7242 6.477L17.7251 6.47611C18.0923 6.10964 18.0911 5.51414 17.725 5.14889Z" fill="#878787"/>
+						</svg>
+
+					</div>
+				</div>
+				<div class="col-12 text-center mt-40">
+					<a href="javascript:Void(0)" class="btn btn-custom">
+						Buy
+						{{content.field_product_name }}
+						Now
+						<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z" fill="white"/>
+						</svg>
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# companies section  #}
+
+	<section class="company-relies section bg-white">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+
+					<h1 class="title  text-center">Companies that rely on
+						{{ content.field_product_name }}
+					</h1>
+				</div>
+
+				<div class="col-12">
+					<div class="company-card d-flex justify-content-between">
+						{% for key, logo in content.field_companies_logo %}
+							{% if key|first != '#' %}
+								<div class="company-logo">
+									{{ logo }}
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	{# case studies section  #}
+	<section class="case-studies-section section bg-white">
+
+		<h2 class="title text-center">Case Studies</h2>
+
+		<div class="swiper case-study-slider">
+			<div class="swiper-wrapper">
+				{% for key, item in content.field_case_studies  %}
+					{% if key|first != '#' %}
+						<div class="swiper-slide">
+							<div class="image-card" style="background-image: url('{{file_url(item['#paragraph'].field_background_of_the_card.entity.fileuri) }}');">
+								<div class="image-content">
+									<h3 class="text-center">{{ item['#paragraph'].field_company_name.value  }}</h3>
+									<p class="text-center">{{  item['#paragraph'].field_company_description.value  }}</p>
+								</div>
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+			<div class="swiper-button-prev">
+
+				<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.274969 6.85111L0.275812 6.852L5.17444 11.727C5.54142 12.0922 6.135 12.0908 6.5003 11.7238C6.86555 11.3568 6.86414 10.7633 6.49716 10.398L3.20822 7.125L17.0625 7.125C17.5803 7.125 18 6.70528 18 6.1875C18 5.66972 17.5803 5.25 17.0625 5.25L3.20826 5.25001L6.49711 1.977C6.86409 1.61175 6.8655 1.01818 6.50025 0.651192C6.13495 0.284114 5.54133 0.282848 5.17439 0.648005L0.275764 5.52301L0.274921 5.5239C-0.0922514 5.89036 -0.0910783 6.48586 0.274969 6.85111Z" fill="#878787"/>
+				</svg>
+
+			</div>
+			<div class="swiper-button-next">
+
+				<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path d="M17.725 5.14889L17.7242 5.148L12.8256 0.272997C12.4586 -0.0922062 11.865 -0.0908471 11.4997 0.276184C11.1345 0.643168 11.1359 1.23675 11.5028 1.602L14.7918 4.875L0.9375 4.875C0.419719 4.875 0 5.29472 0 5.8125C0 6.33028 0.419719 6.75 0.9375 6.75L14.7917 6.75L11.5029 10.023C11.1359 10.3882 11.1345 10.9818 11.4998 11.3488C11.865 11.7159 12.4587 11.7172 12.8256 11.352L17.7242 6.477L17.7251 6.47611C18.0923 6.10964 18.0911 5.51414 17.725 5.14889Z" fill="#878787"/>
+				</svg>
+
+			</div>
+		</div>
+
+		<!-- Optional Swiper nav -->
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	</section>
+
+
+	{# pricing table  #}
+	<section class="pricing-container section">
+		<div class="tab-navigation">
+			<button class="tab-button active" onclick="switchTab('single')">{{content.field_product_name}}</button>
+			<button class="tab-button" onclick="switchTab('bundled')">Bundled Stacks</button>
+		</div>
+		<div id="single" class="tab-content active">
+			<div class="container">
+				<div class="pricing-grid row">
+					{% for key,  plan in content.field_pricing_plan %}
+						{% if key|first != '#' %}
+							<div class="col-12 col-md-4">
+								{% if plan['#paragraph'].field_pricing_product_type.value == 'single' %}
+									<div class="pricing-card  {% if plan['#paragraph'].field_is_featured.value %}featured{% endif %}">
+										<div class="inner-pricing-card">
+                                        <h3 class="plan-name">{{  	plan['#paragraph'].field_plan_name.value }}  {% if plan['#paragraph'].field_is_featured.value %} <span class="best-value">Best Value</span>{% endif %} </h3>
+										<p class="plan-description">{{ plan['#paragraph'].field_plan_description.value }}</p>
+										<div class="plan-price">{{ plan['#paragraph'].field_plan_price.value }}</div>
+										<div class="plan-period">{{  	plan['#paragraph'].field_plan_period.value }}</div>
+
+										<a href="javascript:Void(0)" class="btn btn-custom ">
+											{{ plan['#paragraph'].field_cta_button_text.value }}
+											<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z" fill="white"/>
+											</svg>
+										</a>
+                                        </div>
+										<div class="features">
+											{{	plan['#paragraph'].field_plan_features.value|raw}}
+										</div>
+									</div>
+								{% endif %}
+							</div>
+						{% endif %}
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Bundled Stacks Tab Content -->
+		{# <div id="bundled" class="tab-content">
+						<div class="pricing-grid">
+							<div class="pricing-card">
+								<h3 class="plan-name">Coming Soon</h3>
+								<p class="plan-description">Bundled stack pricing options will be available soon.</p>
+								<div class="plan-price">TBD</div>
+								<div class="plan-period">Pricing to be announced</div>
+		
+							</div>
+						</div>
+					</div> #}
+	</section>
+	{# Learn Section #}
+	<section class="section bg-white">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6 col-md-6">
+					<div class="learn-content">
+						<h2 class="title">
+							{{content.field_learn_section_title}}</h2>
+						<p class="subtext">
+							{{content.field_learn_section_description}}
+						</p>
+						<div class="mt-4 text-center">
+							<a href="javascript:Void(0)" class="btn btn-custom mx-0">
+
+								{{content.field_learn_section_cta_text}}
+
+								<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z" fill="white"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-md-6">
+					<div class="learn-image">
+						{{ 	content.field_learn_section_image}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class=" faq-section section">
+		<div class=" container">
+			<div class="row ">
+				<div class="col-12 text-center mb-40">
+					<h2 class="title ">Frequently Asked Questions</h2>
+				</div>
+				<div class="col-12 col-md-12 col-lg-9 mx-auto">
+					<div class="custom-accordian ">
+						<div
+							class="accordion" id="faqAccordion">
+							<!-- FAQ Item 1 -->
+							{% for key, faq in content.field_faq %}
+								{% if key|first != '#' %}
+									{% set unique_id = 'faq-' ~ loop.index %}
+									<div class="accordion-item">
+										<h3 class="accordion-header" id="headingOne-{{ unique_id }}">
+											<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne-{{ unique_id }}" aria-expanded="false" aria-controls="collapseOne">
+												{{ faq['#paragraph'].field_question.value }}
+
+											</button>
+										</h3>
+										<div id="collapseOne-{{ unique_id }}" class="accordion-collapse collapse" aria-labelledby="headingOne-{{ unique_id }}" data-bs-parent="#faqAccordion">
+											<div class="accordion-body">
+												{{ faq['#paragraph'].field_answer.value|raw }}
+
+											</div>
+										</div>
+									</div>
+								{% endif %}
+							{% endfor %}
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
