@@ -3,7 +3,7 @@
         'name' => 'drupal/recommended-project',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'a809880626abe10b7b30fa49a619e79b5847e14f',
+        'reference' => '1e8df994d97c73ccc8362dc547b9e5457d71e4d0',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -316,6 +316,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'drupal/paragraphs' => array(
+            'pretty_version' => '1.19.0',
+            'version' => '1.19.0.0',
+            'reference' => '8.x-1.19',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../web/modules/contrib/paragraphs',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'drupal/profile' => array(
             'pretty_version' => '1.12.0',
             'version' => '1.12.0.0',
@@ -337,7 +346,7 @@
         'drupal/recommended-project' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a809880626abe10b7b30fa49a619e79b5847e14f',
+            'reference' => '1e8df994d97c73ccc8362dc547b9e5457d71e4d0',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
