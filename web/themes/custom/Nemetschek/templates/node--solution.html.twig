@@ -1,0 +1,37 @@
+<div>
+	{% for item in content.field_banner_section %}
+     {% if item['#paragraph'] is defined %}
+		{% set paragraph = item['#paragraph'] %}
+		<section class="page-banner section">
+			<div class="container h-100 position-relative">
+				<div class="row align-items-center h-100">
+					<div class="col-12 col-md-5">
+						<div class="position-relative">
+							<h2 class="title2 text-white">
+								{{ paragraph.field_product_small_title.value }}</h2>
+							<h1 class="title text-white mt-1 mb-2">
+								{# {{ content.field_title }}</h1> #}
+							<p class="subtext text-white mb-2">
+								{# {{ content.field_description }}</p> #}
+							<a href="javascript:Void(0)" class="btn btn-custom mx-0 mt-4">
+								Get a quote
+								<svg width="18" height="12" viewbox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M17.725 5.33639L17.7242 5.3355L12.8256 0.460497C12.4586 0.0952938 11.865 0.0966529 11.4997 0.463684C11.1345 0.830668 11.1359 1.42425 11.5028 1.7895L14.7918 5.0625H0.9375C0.419719 5.0625 0 5.48222 0 6C0 6.51778 0.419719 6.9375 0.9375 6.9375H14.7917L11.5029 10.2105C11.1359 10.5757 11.1345 11.1693 11.4998 11.5363C11.865 11.9034 12.4587 11.9047 12.8256 11.5395L17.7242 6.6645L17.7251 6.66361C18.0923 6.29714 18.0911 5.70164 17.725 5.33639Z" fill="white"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-md-7">
+						<div class="building-image">
+							<div class="inner-building-image">{# <img src="assets/images/mask-img-1.png" alt="" class="mask-1 mask-img"> #}
+								<!-- <img src="assets/images/mask-img-2.png" alt="" class="mask-2 mask-img"> -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+    {% endif %}
+{% endfor %}
+</div>
